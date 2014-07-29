@@ -1,0 +1,9 @@
+== frc-tmg
+
+frc-tmg is a Rails application designed to act as a simple glossary of various terms/slang used
+in the FIRST Robotics Competition (FRC) for beginners and spectators unfamiliar with FIRST.
+The "tmg" in frc-tmg stands for "The Missing Glossary", as no dedicated glossary site/web application currently exists.
+
+As a current newcomer to Rails and MVC web development, I am developing frc-tmg
+alongside following various beginner Rails tutorials to gain knowledge on web application
+development and frameworks.
