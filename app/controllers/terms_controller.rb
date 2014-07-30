@@ -1,4 +1,5 @@
 class TermsController < ApplicationController
+  before_action :authenticate, except: [:index]
   before_action :set_term, only: [:show, :edit, :update, :destroy]
 
   # GET /terms
@@ -69,6 +70,6 @@ class TermsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def term_params
-      params.require(:term).permit(:phrase, :definition, :example)
+      params.require(:term).permit(:phrase, :definition, :example, :category_ids =>[])
     end
 end

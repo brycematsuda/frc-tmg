@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FrcTmg</title>
+<title>frc-tmg</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div id="header">
+    <h1><%= link_to "The Missing Glossary for FRC", root_path %></h1>
+    <div id="user_bar">
+      <% if logged_in? %>
+      <%= link_to "New Term", new_term_path %> | 
+      <%= link_to "Edit Password", edit_admin_path(current_admin) %> | 
+      <%= link_to "Logout", logout_path %>
+      <% else %>
+      <%= link_to "Admin Login", login_path %>
+      <% end %>
+    </div>
+  </div>
+  <div id="main">
+    <%= content_tag(:p, notice, class: 'notice') if notice.present? %>
+    <%= content_tag(:p, alert, class: 'alert') if alert.present? %>
+    <%= yield %>
+  </div>
+  <div id="footer">
+    v0.01 - much alpha, such tutorial - &copy; The Missing Glossary
+  </div>
 </body>
 </html>

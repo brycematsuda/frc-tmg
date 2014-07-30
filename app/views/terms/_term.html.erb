@@ -1,0 +1,15 @@
+<%= div_for term do %>
+<h3>
+  <%= term.phrase %>
+  <% if logged_in? %>
+  <span class='actions'>
+    <%= link_to "Edit", edit_term_path(term) %>
+    <%= link_to "Delete", term, confirm: "Are you sure?", method: :delete %>
+  </span>
+  <% end %>
+</h3>
+<%= simple_format term.definition %>
+<% if !term.example.blank? %>
+<p><em>"<%= term.example %>"</em></p>
+<% end %>
+<% end %>
